@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..900;1,300..900&family=Outfit:wght@400;600;700;800;900&family=JetBrains+Mono:wght@300;400;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Outfit", var(--font-sans);
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* Specialist Hardware Theme Overrides */
+.beast-glow {
+  text-shadow: 0 0 25px currentColor;
+}
+
+.glow-beast {
+  box-shadow: 0 0 25px -2px rgba(255, 77, 0, 0.5);
+}
+.glow-zen {
+  box-shadow: 0 0 25px -2px rgba(56, 189, 248, 0.5);
+}
+.glow-energy {
+  box-shadow: 0 0 25px -2px rgba(34, 197, 94, 0.5);
+}
+
+.work-active-beast {
+  border-color: #FF4D00;
+  box-shadow: inset 0 0 30px rgba(255, 77, 0, 0.12), 0 0 45px rgba(255, 77, 0, 0.25);
+}
+
+.work-active-zen {
+  border-color: #38bdf8;
+  box-shadow: inset 0 0 30px rgba(56, 189, 248, 0.12), 0 0 45px rgba(56, 189, 248, 0.25);
+}
+
+.work-active-energy {
+  border-color: #22c55e;
+  box-shadow: inset 0 0 30px rgba(34, 197, 94, 0.12), 0 0 45px rgba(34, 197, 94, 0.25);
+}
+
+.radial-gradient-bg {
+  background: radial-gradient(circle at center, #15151a 0%, #060607 100%);
+}
+
+.progress-segment {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  flex: 1;
+  margin: 0 2px;
+  transition: all 0.3s ease;
+}
+
+.progress-segment.active-beast {
+  background: #FF4D00;
+  box-shadow: 0 0 10px #FF4D00;
+}
+
+.progress-segment.active-zen {
+  background: #38bdf8;
+  box-shadow: 0 0 10px #38bdf8;
+}
+
+.progress-segment.active-energy {
+  background: #22c55e;
+  box-shadow: 0 0 10px #22c55e;
+}
+
+.neon-border {
+  border: 1px solid rgba(255, 77, 0, 0.25);
+}
+
+/* breathing fluid animation for the REST period */
+@keyframes breath {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.4;
+  }
+}
+
+.animate-breath {
+  animation: breath 4s ease-in-out infinite;
+}
+
+/* Heartbeat pulse animation for WORK sets */
+@keyframes workoutPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 8px rgba(255, 77, 0, 0.15));
+  }
+  50% {
+    transform: scale(1.015);
+    filter: drop-shadow(0 0 30px rgba(255, 77, 0, 0.45));
+  }
+}
+
+.animate-work-pulse {
+  animation: workoutPulse 1.8s ease-in-out infinite;
+}
+
+/* Custom radial background styles */
+.gradient-noise {
+  background-image: radial-gradient(circle at 50% 50%, rgba(18, 18, 20, 0.8) 0%, rgba(6, 6, 7, 0.99) 100%);
+}
+
+/* Track styling for standard range scrollbars or similar interactive gym knobs */
+input[type="range"]::-webkit-slider-thumb {
+  background: currentColor;
+  border-radius: 9999px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
