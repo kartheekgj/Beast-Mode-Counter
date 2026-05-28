@@ -5,8 +5,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/Beast-Mode-Timer/',
-
+    base: '/Beast-Mode-Counter/',
     plugins: [react(), tailwindcss()],
 
     resolve: {
